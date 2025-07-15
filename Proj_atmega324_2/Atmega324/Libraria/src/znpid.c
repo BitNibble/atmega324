@@ -53,6 +53,7 @@ ZNPID ZNPIDenable(void)
 	
 	return znpid_setup;
 }
+
 /*** Procedure & Function definfition ***/
 void ZNPID_set_kc(znpid_parameter* par, double kc)
 {

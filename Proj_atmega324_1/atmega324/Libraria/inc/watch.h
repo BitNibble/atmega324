@@ -20,6 +20,8 @@ typedef struct {
 
 /*** Handler ***/
 typedef struct {
+	WATCH_TIME time;
+	
 	// V-table
 	void (*preset)(uint8_t hour, uint8_t minute, uint8_t second);
 	uint8_t (*start_delay)(uint8_t n_delay, uint32_t seconds);
@@ -27,7 +29,6 @@ typedef struct {
 	char* (*show)(void);
 } WATCH;
 
-void watch_enable(void);
 WATCH* watch(void);
 
 /*** Procedure and Function declaration ***/

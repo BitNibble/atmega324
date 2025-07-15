@@ -14,9 +14,8 @@ Date:     03072025
 #define W24HOUR 24
 #define W12_HOUR_SECONDS 43200
 #define W24_HOUR_SECONDS 86400
+
 /*** Variable ***/
-static WATCH watch_setup;
-static WATCH_TIME wtime;
 const uint32_t w12_hour_seconds = (W12_HOUR_SECONDS - 1);
 const uint32_t w24_hour_seconds = (W24_HOUR_SECONDS - 1);
 static char WATCH_vector[9] = {0};
@@ -32,21 +31,22 @@ uint8_t WATCH_start_delay(uint8_t n_delay, uint32_t seconds);
 void WATCH_result(void);
 char* WATCH_show(void);
 
-/*** Handler ***/
-void watch_enable(void)
-{
-	wtime.hour = 0;
-	wtime.minute = 0;
-	wtime.second = 0;
-	wtime.seconds = 0;
-	
+/*** Internal State ***/
+static WATCH watch_setup = {
+	.time = {
+		.hour = 0,
+		.minute = 0,
+		.second = 0,
+		.seconds = 0
+	},
 	// V-table
-	watch_setup.preset = WATCH_preset;
-	watch_setup.start_delay = WATCH_start_delay;
-	watch_setup.increment = WATCH_increment;
-	watch_setup.show = WATCH_show;
-}
+	.preset = WATCH_preset,
+	.start_delay = WATCH_start_delay,
+	.increment = WATCH_increment,
+	.show = WATCH_show
+};
 
+/*** Handler ***/
 WATCH* watch(void){ return &watch_setup;}
 
 /*** Procedure and Function definition ***/
@@ -55,13 +55,13 @@ uint8_t WATCH_start_delay(uint8_t delay_n, uint32_t seconds){
 	uint8_t ret = 0; // one shot repeat
 	delay_n &= N_DELAY_MASK;
 	if(WATCH_delay_flag[delay_n]) {
-		segundos = wtime.seconds;
+		segundos = watch_setup.time.seconds;
 		if( segundos >= WATCH_trigger[delay_n] ) {
 			WATCH_delay_flag[delay_n] = 0;
 			ret = 1;
 		}
 	}else {
-		segundos = wtime.seconds + seconds;
+		segundos = watch_setup.time.seconds + seconds;
 		if(segundos > w24_hour_seconds)
 			WATCH_trigger[delay_n] = segundos - W24_HOUR_SECONDS;
 		else
@@ -74,60 +74,60 @@ uint8_t WATCH_start_delay(uint8_t delay_n, uint32_t seconds){
 void WATCH_preset(uint8_t hour, uint8_t minute, uint8_t second)
 {
 	if(hour < W24HOUR)
-		wtime.hour = hour;
+		watch_setup.time.hour = hour;
 	else
-		wtime.hour = 0;
+		watch_setup.time.hour = 0;
 		
 	if( minute < 60 )
-		wtime.minute = minute;
+		watch_setup.time.minute = minute;
 	else
-		wtime.minute = 0;
+		watch_setup.time.minute = 0;
 		
 	if( second < 60 )
-		wtime.second = second;
+		watch_setup.time.second = second;
 	else
-		wtime.second = 0;
-	wtime.seconds = (uint32_t) (hour * 3600. + minute * 60. + second);
+		watch_setup.time.second = 0;
+	watch_setup.time.seconds = (uint32_t) (hour * 3600. + minute * 60. + second);
 }
 
 void WATCH_set_second(uint8_t sec){
 	if( sec < 60 )
-	wtime.seconds = wtime.hour * 3600. + wtime.minute * 60. + sec;
+	watch_setup.time.seconds = watch_setup.time.hour * 3600. + watch_setup.time.minute * 60. + sec;
 }
 
 void WATCH_set_minute(uint8_t min){
 	if( min < 60 )
-		wtime.seconds = wtime.hour * 3600. + min * 60. + wtime.second;
+		watch_setup.time.seconds = watch_setup.time.hour * 3600. + min * 60. + watch_setup.time.second;
 }
 
 void WATCH_set_hour(uint8_t hour){
 	if( hour < W24HOUR )
-		wtime.seconds = hour * 3600. + wtime.minute * 60. + wtime.second;
+		watch_setup.time.seconds = hour * 3600. + watch_setup.time.minute * 60. + watch_setup.time.second;
 }
 
 void WATCH_increment(void)
 {
-	if(wtime.seconds < w24_hour_seconds){
-		wtime.seconds++;
+	if(watch_setup.time.seconds < w24_hour_seconds){
+		watch_setup.time.seconds++;
 	}else {
-		wtime.seconds = 0;
+		watch_setup.time.seconds = 0;
 	}
 }
 
 void WATCH_decrement(void)
 {
-	if(wtime.seconds)
-		wtime.seconds--;
+	if(watch_setup.time.seconds)
+		watch_setup.time.seconds--;
 	else
-		wtime.seconds = w24_hour_seconds;
+		watch_setup.time.seconds = w24_hour_seconds;
 }
 
 void WATCH_result(void)
 {
-	uint16_t remainder = wtime.seconds % 3600;
-	wtime.hour = wtime.seconds / 3600;
-	wtime.minute = remainder / 60;
-	wtime.second = remainder % 60;
+	uint16_t remainder = watch_setup.time.seconds % 3600;
+	watch_setup.time.hour = watch_setup.time.seconds / 3600;
+	watch_setup.time.minute = remainder / 60;
+	watch_setup.time.second = remainder % 60;
 }
 
 char* WATCH_show(void)
@@ -135,16 +135,16 @@ char* WATCH_show(void)
 	uint8_t tmp;
 	WATCH_result();
 	WATCH_vector[8] = '\0';
-	WATCH_vector[7] = wtime.second % 10 + '0';
-	tmp = wtime.second / 10;
+	WATCH_vector[7] = watch_setup.time.second % 10 + '0';
+	tmp = watch_setup.time.second / 10;
 	WATCH_vector[6] = tmp % 10 + '0';
 	WATCH_vector[5] = ':';
-	WATCH_vector[4] = wtime.minute % 10 + '0';
-	tmp = wtime.minute / 10;
+	WATCH_vector[4] = watch_setup.time.minute % 10 + '0';
+	tmp = watch_setup.time.minute / 10;
 	WATCH_vector[3] = tmp % 10 + '0';
 	WATCH_vector[2] = ':';
-	WATCH_vector[1] = wtime.hour % 10 + '0';
-	tmp = wtime.hour / 10;
+	WATCH_vector[1] = watch_setup.time.hour % 10 + '0';
+	tmp = watch_setup.time.hour / 10;
 	WATCH_vector[0] = tmp % 10 + '0';
 	return WATCH_vector;
 }

@@ -40,7 +40,6 @@ PORTINIT();
 tc1_enable(4,3);// 4->CTC ; 3->TIMER1_COMPA_vect
 lcd0_enable(&DDRC,&PINC,&PORTC);
 func_enable();
-watch_enable();
 adc_enable( 1, 128, 1, 0 );
 usart0_enable(38400,8,1,NONE);
 /******/

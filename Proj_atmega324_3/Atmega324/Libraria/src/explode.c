@@ -21,7 +21,7 @@ IO_var EXPLODEhl(explode_parameter* par);
 /*** Handler ***/
 EXPLODE explode_enable( void )
 {
-	// struct object
+	/*** Local State ***/
 	EXPLODE setup_explode = {
 		.par = {
 			.HH = 0,

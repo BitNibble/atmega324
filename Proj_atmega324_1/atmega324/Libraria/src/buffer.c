@@ -18,16 +18,19 @@ void BUFF_flush(buffer_parameter* par);
 /*** Handler ***/
 BUFF buff_enable( uint8_t size_buff, BUFFvar* buff )
 {
-	// OBJECT STRUCT
-	BUFF ret_setup;
-	// inic VAR
-	ret_setup.par.orig = buff;
-	ret_setup.par.head = buff;
-	ret_setup.par.end = buff + ( size_buff );
+	/*** Local State ***/
+	BUFF ret_setup = {
+	.par = {
+		.orig = buff,
+		.head = buff,
+		.end = buff + ( size_buff )
+	},
 	// V-table
-	ret_setup.push = BUFF_push;
-	ret_setup.raw = BUFF_raw;
-	ret_setup.flush = BUFF_flush;
+	.push = BUFF_push,
+	.raw = BUFF_raw,
+	.flush = BUFF_flush
+	};
+	
 	return ret_setup; // return copy
 }
 
