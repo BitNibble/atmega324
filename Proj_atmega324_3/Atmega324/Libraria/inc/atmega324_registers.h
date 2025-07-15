@@ -59,52 +59,52 @@ typedef union {
 // Reserved 0x34
 typedef	volatile union {
 	struct{
-		uint8_t tov0 : 1, ocf0a : 1, ocf0b : 1, fill0 : 5;
+		uint8_t tov0 : 1, ocf0a : 1, ocf0b : 1, fill : 5;
 	}par;
 	uint8_t var;
-} TIFR0_Typedef; // 0x35
+} TIFR0_TypeDef; // 0x35
 typedef	volatile union {
 	struct{
 		uint8_t tov1 : 1, ocf1a : 1, ocf1b : 1, fill0 : 2, icf1 : 1, fill1 : 2;
 	}par;
 	uint8_t var;
-} TIFR1_Typedef; // 0x36
+} TIFR1_TypeDef; // 0x36
 typedef	volatile union {
 	struct{
-		uint8_t tov2 : 1, ocf2a : 1, ocf2b : 1, fill0 : 5;
+		uint8_t tov2 : 1, ocf2a : 1, ocf2b : 1, fill : 5;
 	}par;
 	uint8_t var;
-} TIFR2_Typedef; // 0x37
+} TIFR2_TypeDef; // 0x37
 typedef	volatile union {
 	struct{
 		uint8_t tov3 : 1, ocf3a : 1, ocf3b : 1, fill0 : 2, icf3 : 1, fill1 : 2;
 	}par;
 	uint8_t var;
-} TIFR3_Typedef; // 0x38
+} TIFR3_TypeDef; // 0x38
 // Reserved 0x39
 // Reserved 0x3A
 typedef union {
 	struct{
-		uint8_t pcif0 : 1, pcif1 : 1, pcif2 : 1, pcif3 : 1, fill0 : 4;
+		uint8_t pcif0 : 1, pcif1 : 1, pcif2 : 1, pcif3 : 1, fill : 4;
 	}par;
 	uint8_t var;
 } PCIFR_TypeDef; // 0x3B
 typedef union {
 	struct{
-		uint8_t intf0 : 1, intf1 : 1, intf2 : 1, fill0 : 5;
+		uint8_t intf0 : 1, intf1 : 1, intf2 : 1, fill : 5;
 	}par;
 	uint8_t var;
 } EIFR_TypeDef; // 0x3C
 typedef union {
 	struct{
-		uint8_t int0 : 1, int1 : 1, int2 : 1, fill0 : 5;
+		uint8_t int0 : 1, int1 : 1, int2 : 1, fill : 5;
 	}par;
 	uint8_t var;
 } EIMSK_TypeDef; // 0x3D
 // _GPIOR0 0x3E (U_byte)
 typedef union {
 	struct{
-		uint8_t eere : 1, eepe : 1, eempe : 1, eerie : 1, eepm0 : 1, eepm1 : 1, fill0 : 2;
+		uint8_t eere : 1, eepe : 1, eempe : 1, eerie : 1, eepm0 : 1, eepm1 : 1, fill : 2;
 	}par;
 	uint8_t var;
 } EECR_TypeDef; // 0x3F
@@ -112,19 +112,19 @@ typedef union {
 // EEARL EEARH 0x41 0x42 (U_word)
 typedef union {
 	struct{
-		uint8_t psr5sync : 1, psrasy : 1, fill0 : 5, tsm : 1;
+		uint8_t psr5sync : 1, psrasy : 1, fill : 5, tsm : 1;
 	}par;
 	uint8_t var;
 } GTCCR_TypeDef; // 0x43
 typedef union {
 	struct{
-		uint8_t wgm00 : 1, wgm01 : 1, fill0 : 2, com0b0 : 1, com0b1 : 1, com0a0 : 1, com0a1 : 1;
+		uint8_t wgm00 : 1, wgm01 : 1, fill : 2, com0b0 : 1, com0b1 : 1, com0a0 : 1, com0a1 : 1;
 	}par;
 	uint8_t var;
 } TCCR0A_TypeDef; // 0x44
 typedef union {
 	struct{
-		uint8_t cs00 : 1, cs01 : 1, cs02 : 1, wgm02 : 1, fill0 : 2, foc0b : 1, foc0a : 1;
+		uint8_t cs00 : 3, wgm02 : 1, fill : 2, foc0b : 1, foc0a : 1;
 	}par;
 	uint8_t var;
 } TCCR0B_TypeDef; // 0x45
@@ -136,13 +136,13 @@ typedef union {
 // GPIOR2 0x4B (U_byte)
 typedef union {
 	struct{
-		uint8_t spr00 : 1, spr01 : 1, cpha0 : 1, cpol0 : 1, mstr0 : 1, dord0 : 1, spe0 : 1, spie0 : 1;
+		uint8_t spr : 2, cpha : 1, cpol : 1, mstr : 1, dord : 1, spe : 1, spie : 1;
 	}par;
 	uint8_t var;
 } SPCR_TypeDef; // 0x4C
 typedef union {
 	struct{
-		uint8_t spi2x0 : 1, fill0 : 5, wcol0 : 1, spif0 : 1;
+		uint8_t spi2x : 1, fill : 5, wcol : 1, spif : 1;
 	}par;
 	uint8_t var;
 } SPSR_TypeDef; // 0x4D
@@ -158,19 +158,19 @@ typedef union {
 // Reserved 0x52
 typedef union {
 	struct{
-		uint8_t se : 1, sm0 : 1, sm1 : 1, sm2 : 1, fill0 : 4;
+		uint8_t se : 1, sm0 : 1, sm1 : 1, sm2 : 1, fill : 4;
 	}par;
 	uint8_t var;
 } SMCR_TypeDef; // 0x53
 typedef union {
 	struct{
-		uint8_t porf : 1, extrf : 1, borf : 1, wdrf : 1, jtrf : 1, fill0 : 3;
+		uint8_t porf : 1, extrf : 1, borf : 1, wdrf : 1, jtrf : 1, fill : 3;
 	}par;
 	uint8_t var;
 } MCUSR_TypeDef; // 0x54
 typedef union {
 	struct{
-		uint8_t ivce : 1, ivsel : 1, fill0 : 2, pud : 1, bodse : 1, bods : 1, jtd : 1;
+		uint8_t ivce : 1, ivsel : 1, fill : 2, pud : 1, bodse : 1, bods : 1, jtd : 1;
 	}par;
 	uint8_t var;
 } MCUCR_TypeDef; // 0x55
@@ -186,7 +186,7 @@ typedef union {
 // Reserved 0x5A
 typedef union {
 	struct{
-		uint8_t rampz0 : 1, fill0 : 7;
+		uint8_t rampz : 1, fill : 7;
 	}par;
 	uint8_t var;
 } RAMPZ_TypeDef; // 0x5B
@@ -206,7 +206,7 @@ typedef union {
 } WDTCSR_TypeDef; // 0x60
 typedef union {
 	struct{
-		uint8_t clkps0 : 1, clkps1 : 1, clkps2 : 1, clkps3 : 1, fill0 : 3, clkpce : 1;
+		uint8_t clkps0 : 1, clkps1 : 1, clkps2 : 1, clkps3 : 1, fill : 3, clkpce : 1;
 	}par;
 	uint8_t var;
 } CLKPR_TypeDef; // 0x61
@@ -223,13 +223,13 @@ typedef union {
 // Reserved 0x67
 typedef union {
 	struct{
-		uint8_t pcie0 : 1, pcie1 : 1, pcie2 : 1, pcie3 : 1, fill0 : 4;
+		uint8_t pcie0 : 1, pcie1 : 1, pcie2 : 1, pcie3 : 1, fill : 4;
 	}par;
 	uint8_t var;
 } PCICR_TypeDef; // 0x68
 typedef union {
 	struct{
-		uint8_t isc00 : 1, isc01 : 1, isc10 : 1, isc11 : 1, isc20 : 1, isc21 : 1, fill0 : 2;
+		uint8_t isc0 : 2, isc1 : 2, isc2 : 2, fill : 2;
 	}par;
 	uint8_t var;
 } EICRA_TypeDef; // 0x69
@@ -254,7 +254,7 @@ typedef union {
 } PCMSK2_TypeDef; // 0x6D
 typedef union {
 	struct{
-		uint8_t toie0 : 1, ocie0a : 1, ocie0b : 1, fill0 : 5;
+		uint8_t toie0 : 1, ocie0a : 1, ocie0b : 1, fill : 5;
 	}par;
 	uint8_t var;
 } TIMSK0_TypeDef; // 0x6E
@@ -266,7 +266,7 @@ typedef union {
 } TIMSK1_TypeDef; // 0x6F
 typedef union {
 	struct{
-		uint8_t toie2 : 1, ocie2a : 1, ocie2b : 1, fill0 : 5;
+		uint8_t toie2 : 1, ocie2a : 1, ocie2b : 1, fill : 5;
 	}par;
 	uint8_t var;
 } TIMSK2_TypeDef; // 0x70
@@ -315,25 +315,25 @@ typedef union {
 } DIDR0_TypeDef; // 0x7E
 typedef union {
 	struct{
-		uint8_t ain0d : 1, ain1d : 1, fill0 : 6;
+		uint8_t ain0d : 1, ain1d : 1, fill : 6;
 	}par;
 	uint8_t var;
 } DIDR1_TypeDef; // 0x7F
 typedef union {
 	struct{
-		uint8_t wgm10 : 1, wgm11 : 1, fill0 : 2, com1b0 : 1, com1b1 : 1, com1a0 : 1, com1a1 : 1;
+		uint8_t wgm10 : 1, wgm11 : 1, fill : 2, com1b0 : 1, com1b1 : 1, com1a0 : 1, com1a1 : 1;
 	}par;
 	uint8_t var;
 } TCCR1A_TypeDef; // 0x80
 typedef union {
 	struct{
-		uint8_t cs10 : 1, cs11 : 1, cs12 : 1, wgm12 : 1, wgm13 : 1, fill0 : 1, ices1 : 1, icnc1 : 1;
+		uint8_t cs10 : 1, cs11 : 1, cs12 : 1, wgm12 : 1, wgm13 : 1, fill : 1, ices1 : 1, icnc1 : 1;
 	}par;
 	uint8_t var;
 } TCCR1B_TypeDef; // 0x81
 typedef union {
 	struct{
-		uint8_t fill0 : 6, foc1b : 1, foc1a : 1;
+		uint8_t fill : 6, foc1b : 1, foc1a : 1;
 	}par;
 	uint8_t var;
 } TCCR1C_TypeDef; // 0x82
@@ -348,19 +348,19 @@ typedef union {
 // Reserved 0x8F
 typedef union {
 	struct{
-		uint8_t wgm30 : 1, wgm31 : 1, fill0 : 2, com3b0 : 1, com3b1 : 1, com3a0 : 1, com3a1 : 1;
+		uint8_t wgm30 : 1, wgm31 : 1, fill : 2, com3b0 : 1, com3b1 : 1, com3a0 : 1, com3a1 : 1;
 	}par;
 	uint8_t var;
 } TCCR3A_TypeDef; // 0x90
 typedef union {
 	struct{
-		uint8_t cs30 : 1, cs31 : 1, cs32 : 1, wgm32 : 1, wgm33 : 1, fill0 : 1, ices3 : 1, icnc3 : 1;
+		uint8_t cs3 : 3, wgm32 : 1, wgm33 : 1, fill : 1, ices3 : 1, icnc3 : 1;
 	}par;
 	uint8_t var;
 } TCCR3B_TypeDef; // 0x91
 typedef union {
 	struct{
-		uint8_t fill0 : 6, foc3b : 1, foc3a : 1;
+		uint8_t fill : 6, foc3b : 1, foc3a : 1;
 	}par;
 	uint8_t var;
 } TCCR3C_TypeDef; // 0x92
@@ -391,13 +391,13 @@ typedef union {
 // Reserved 0xAF
 typedef union {
 	struct{
-		uint8_t wgm20 : 1, wgm21 : 1, fill0 : 2, com2b0 : 1, com2b1 : 1, com2a0 : 1, com2a1 : 1;
+		uint8_t wgm20 : 1, wgm21 : 1, fill : 2, com2b0 : 1, com2b1 : 1, com2a0 : 1, com2a1 : 1;
 	}par;
 	uint8_t var;
 } TCCR2A_TypeDef; // 0xB0
 typedef union {
 	struct{
-		uint8_t cs20 : 1, cs21 : 1, cs22 : 1, wgm22 : 1, fill0 : 2, foc2b : 1, foc2a : 1;
+		uint8_t cs2 : 3, wgm22 : 1, fill : 2, foc2b : 1, foc2a : 1;
 	}par;
 	uint8_t var;
 } TCCR2B_TypeDef; // 0xB1
@@ -407,7 +407,7 @@ typedef union {
 // Reserved 0xB5
 typedef union {
 	struct{
-		uint8_t tcr2bub : 1, tcr2aub : 1, ocr2bub : 1, ocr2aub : 1, tcn2ub : 1, as2 : 1, exclk : 1, fill0 : 1;
+		uint8_t tcr2bub : 1, tcr2aub : 1, ocr2bub : 1, ocr2aub : 1, tcn2ub : 1, as2 : 1, exclk : 1, fill : 1;
 	}par;
 	uint8_t var;
 } ASSR_TypeDef; // 0xB6
@@ -415,26 +415,26 @@ typedef union {
 // TWBR 0xB8 (U_byte)
 typedef union {
 	struct{
-		uint8_t twps : 2, fill0 : 1, tws3 : 1, tws4 : 1, tws5 : 1, tws6 : 1, tws7 : 1;
+		uint8_t twps : 2, fill : 1, tws3 : 1, tws4 : 1, tws5 : 1, tws6 : 1, tws7 : 1;
 	}par;
 	uint8_t var;
 } TWSR_TypeDef; // 0xB9
 typedef union {
 	struct{
-		uint8_t twgce : 1, twa : 7;
+		uint8_t twa : 7, twgce : 1;
 	}par;
 	uint8_t var;
 } TWAR_TypeDef; // 0xBA
 // TWDR 0xBB (U_byte)
 typedef union {
 	struct{
-		uint8_t twie : 1, fill0 : 1, twen : 1, twwc : 1, twsto : 1, twsta : 1, twea : 1, twint : 1;
+		uint8_t twie : 1, fill : 1, twen : 1, twwc : 1, twsto : 1, twsta : 1, twea : 1, twint : 1;
 	}par;
 	uint8_t var;
 } TWCR_TypeDef; // 0xBC
 typedef union {
 	struct{
-		uint8_t fill0 : 1, twam0 : 1, twam1 : 1, twam2 : 1, twam3 : 1, twam4 : 1, twam5 : 1, twam6 : 1;
+		uint8_t twam0 : 1, twam1 : 1, twam2 : 1, twam3 : 1, twam4 : 1, twam5 : 1, twam6 : 1, fill : 1;
 	}par;
 	uint8_t var;
 } TWAMR_TypeDef; // 0xBD
@@ -454,7 +454,7 @@ typedef union {
 } UCSR0B_TypeDef; // 0xC1
 typedef union {
 	struct{
-		uint8_t ucpol0 : 1, ucpha0 : 1, udord0 : 1, fill0 : 3, umsel00 : 1, umsel01 : 1;
+		uint8_t ucpol0 : 1, ucsz00 : 1, ucsz01 : 1, usbs0 : 1, upm0 : 2, umsel0 : 2;
 	}par;
 	uint8_t var;
 } UCSR0C_TypeDef; // 0xC2
@@ -476,7 +476,7 @@ typedef union {
 } UCSR1B_TypeDef; // 0xC9
 typedef union {
 	struct{
-		uint8_t ucpol1 : 1, ucpha1 : 1, udord1 : 1, fill0 : 3, umsel10 : 1, umsel11 : 1;
+		uint8_t ucpol1 : 1, ucsz10 : 1, ucsz11 : 1, usbs1 : 1, upm1 : 2, umsel1 : 2;
 	}par;
 	uint8_t var;
 } UCSR1C_TypeDef; // 0xCA
