@@ -8,7 +8,7 @@ Comment:
 	Pin Analysis
 	Tested Atemga128 16Mhz and Atmega328 8Mhz and STM32F446RE
 ********************************************************************/
-/*** File Library ***/
+/*** Library ***/
 #include"explode.h"
 
 /*** Procedure and Function declaration ***/
@@ -31,6 +31,7 @@ EXPLODE explode_enable( void )
 			.XF = 0,
 			.XI = 0
 		},
+		// V-table
 		.update = EXPLODEupdate
 	};
 

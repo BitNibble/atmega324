@@ -4,17 +4,17 @@ Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Date:     03072025
 *************************************************************************/
-/*** File Library ***/
+/*** Library ***/
 #include "watch.h"
 
-/*** File Constant & Macro***/
+/*** Constant & Macro***/
 #define N_DELAY 16
 #define N_DELAY_MASK 0X0F
 #define W12HOUR 12
 #define W24HOUR 24
 #define W12_HOUR_SECONDS 43200
 #define W24_HOUR_SECONDS 86400
-/*** File Variable ***/
+/*** Variable ***/
 static WATCH watch_setup;
 static WATCH_TIME wtime;
 const uint32_t w12_hour_seconds = (W12_HOUR_SECONDS - 1);
@@ -40,6 +40,7 @@ void watch_enable(void)
 	wtime.second = 0;
 	wtime.seconds = 0;
 	
+	// V-table
 	watch_setup.preset = WATCH_preset;
 	watch_setup.start_delay = WATCH_start_delay;
 	watch_setup.increment = WATCH_increment;

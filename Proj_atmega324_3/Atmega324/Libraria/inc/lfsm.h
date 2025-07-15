@@ -11,13 +11,13 @@ Comment:
 #ifndef _LFSM_H_
 	#define _LFSM_H_
 
-/*** Global Library ***/
+/*** Library ***/
 #include "atmega_eeprom.h"
 #include <inttypes.h>
 
-/*** Global Constant & Macro ***/
+/*** Constant & Macro ***/
 
-/*** Global Variable ***/
+/*** Variable ***/
 struct lfsmdata{
 	uint8_t page;
 	uint16_t feedback;
@@ -28,6 +28,7 @@ struct lfsmdata{
 	uint16_t outlh;
 };
 
+/*** Handler ***/
 struct lfsm{
 	// Local Variables
 	EEPROM* eprom;
@@ -55,5 +56,5 @@ typedef struct lfsm LFSM;
 LFSM lfsm_enable(EEPROM* eeprom, const uint16_t sizeeeprom);
 
 #endif
-/***EOF***/
+/*** EOF ***/
 

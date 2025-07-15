@@ -10,10 +10,10 @@ Comment:
 #ifndef _EXPLODE_H_
 	#define _EXPLODE_H_
 
-/*** Global Library ***/
+/*** Library ***/
 #include <inttypes.h>
 
-/*** Global Constant & Macro ***/
+/*** Constant & Macro ***/
 //#define STM32F4
 #if defined (STM32F4)
 	#define IO_var uint32_t
@@ -21,7 +21,7 @@ Comment:
 	#define IO_var uint8_t
 #endif
 
-/*** Global TypeDef ***/
+/*** Parameter ***/
 typedef struct {
 	IO_var XI;
 	IO_var XF;
@@ -34,6 +34,7 @@ typedef struct {
 /*** Handler ***/
 typedef struct {
 	explode_parameter par;
+	
 	// V-table
 	void (*update)(explode_parameter* par, IO_var x);
 }EXPLODE;
@@ -41,7 +42,6 @@ typedef struct {
 EXPLODE explode_enable(void);
 
 #endif
-
 /*** EOF ***/
 
 /******

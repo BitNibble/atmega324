@@ -8,11 +8,11 @@ Update:   30062025
 #ifndef _ATMEGA324_TWI_H_
 	#define _ATMEGA324_TWI_H_
 
-/*** Global Library ***/
+/*** Library ***/
 #include <util/twi.h>
 #include "atmega324.h"
 
-/*** Global Constant & Macro ***/
+/*** Constant & Macro ***/
 #ifndef _TWI_MODULE_
 	#define _TWI_MODULE_
 #endif
@@ -77,5 +77,5 @@ void twi_enable(uint8_t atmega_ID, uint8_t prescaler);
 TWI0* twi(void);
 
 #endif
-/***EOF***/
+/*** EOF ***/
 

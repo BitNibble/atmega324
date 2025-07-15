@@ -13,7 +13,7 @@ Date:     04/07/2025
 	#error "This library requires AVR-GCC 3.4 or later, update to newer AVR-GCC compiler !"
 #endif
 
-/*** Gloabl Library ***/
+/*** Library ***/
 #include <stdint.h>
 #include <inttypes.h>
 #include <stddef.h>
@@ -34,7 +34,7 @@ typedef union {
 } U_word;
 
 /*****************************/
-/****      REGISTERS      ****/
+/*****      REGISTER      ****/
 /*****************************/
 // PINA 0x20 (U_byte)
 // DDRA 0x21 (U_byte)

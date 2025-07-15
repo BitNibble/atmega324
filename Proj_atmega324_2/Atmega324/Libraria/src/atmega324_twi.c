@@ -5,7 +5,7 @@ License:  GNU General Public License
 Hardware: ATmega324A
 Update:   30062025
 ***************************************************************************************************/
-/*** File Library ***/
+/*** Library ***/
 #include "atmega324_twi.h"
 #include <util/delay.h>
 
@@ -20,6 +20,7 @@ void TWI_stop(void);
 uint8_t TWI_status(void);
 void TWI_wait_twint( uint16_t nticks );
 
+/*** Internal State ***/
 static TWI0 twi_setup = {
 	// V-table
 	.start = TWI_start,

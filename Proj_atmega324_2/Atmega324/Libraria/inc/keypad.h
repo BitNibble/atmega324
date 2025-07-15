@@ -8,10 +8,10 @@ Date:     27112022
 #ifndef _KEYPAD_H_
 	#define _KEYPAD_H_
 
-/*** Global Library ***/
+/*** Library ***/
 #include <inttypes.h>
 
-/*** Global Constant & Macro ***/
+/*** Constant & Macro ***/
 // pin number
 #define KEYPADLINE_1 7
 #define KEYPADLINE_2 0
@@ -25,7 +25,7 @@ Date:     27112022
 #define KEYPADSTRINGSIZE 6
 #define KEYPADENTERKEY 'D'
 
-/*** Tyepedef ***/
+/*** Parameter ***/
 typedef struct {
 	char character;
 	char* print;
@@ -34,8 +34,7 @@ typedef struct {
 
 /*** Handler ***/
 struct keypad{
-	// Local Variables
-	// Function Pointers
+	// V-table
 	char (*getkey)(void);
 	void (*read)(void);
 	keypadata (*data)(void);
@@ -47,5 +46,5 @@ void keypad_enable(volatile uint8_t *ddr, volatile uint8_t *pin, volatile uint8_
 KEYPAD* keypad(void);
 
 #endif
-/***EOF***/
+/*** EOF ***/
 

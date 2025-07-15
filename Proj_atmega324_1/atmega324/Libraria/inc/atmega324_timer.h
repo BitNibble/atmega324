@@ -12,8 +12,10 @@ Date:     04072025
 	#error "This library requires AVR-GCC 3.4 or later, update to newer AVR-GCC compiler !"
 #endif
 
+/*** Library ***/
 #include "atmega324.h"
 
+/*** Constant & Macro ***/
 /*** Interrupt sources 0 ***/
 #define TIMER_COUNTER0A_COMPARE_MATCH_INTERRUPT TIMER0_COMPA_vect
 #define TIMER_COUNTER0B_COMPARE_MATCH_INTERRUPT TIMER0_COMPB_vect
@@ -69,5 +71,5 @@ void tc3_enable(uint8_t wavegenmode, uint8_t interrupt);
 TIMER_COUNTER3* tc3(void);
 
 #endif
-/***EOF***/
+/*** EOF ***/
 

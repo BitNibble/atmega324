@@ -5,17 +5,17 @@ License:  GNU General Public License
 Hardware: all
 Date:     27112022
 *************************************************************************/
-/*** File Library ***/
+/*** Library ***/
 #include "keypad.h"
 #include <stdlib.h>
 #include <string.h>
 #include <stdarg.h>
 
-/*** Global Constant & Macro ***/
+/*** Constant & Macro ***/
 #define KEYPADLINES 4
 #define KEYPADCOLUMNS 4
 
-/*** File Variable ***/
+/*** Variable ***/
 static KEYPAD keypad_setup;
 volatile uint8_t *keypad_DDR;
 volatile uint8_t *keypad_PIN;

@@ -7,14 +7,14 @@ Date:     31106025
 #ifndef _CLOCK_H_
 	#define _CLOCK_H_
 
-/*** Global Library ***/
+/*** Library ***/
 #include <stdint.h>
 #include <inttypes.h>
 
-/*** Global Constant & Macro ***/
+/*** Constant & Macro ***/
 #define CLOCK_HORA 24
 
-/*** Typedef ***/
+/*** Parameter ***/
 typedef volatile struct {
 	int8_t hour;
 	int8_t minute;
@@ -23,6 +23,7 @@ typedef volatile struct {
 
 /*** Handler ***/
 struct clck{
+	// V-table
 	void (*set)(uint8_t hour, uint8_t minute, uint8_t second);
 	void (*increment)(void);
 	char* (*show)(void);

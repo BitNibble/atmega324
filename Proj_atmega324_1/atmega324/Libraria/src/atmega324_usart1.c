@@ -5,13 +5,13 @@ License:  GNU General Public License
 Hardware: ATmega324
 Update:   26/06/2025
 *************************************************************************/
-/*** File Library ***/
+/*** Library ***/
 #include "atmega324_usart1.h"
 #include "buffer.h"
 #include <avr/interrupt.h>
 #include <string.h>
 
-/*** File Variable ***/
+/*** Variable ***/
 static USART1 usart1_setup;
 
 static BUFF rx1buff;
@@ -30,7 +30,7 @@ void uart1_rxflush(void);
 void uart1_write(UARTvar data);
 void uart1_putch(UARTvar c);
 void uart1_puts(UARTvar* s);
-/*** Complimentary functions ***/
+/*** Complimentary function ***/
 uint8_t USART1ReceiveComplete(void);
 uint8_t USART1TransmitComplete(void);
 uint8_t USART1DataRegisterEmpty(void);
@@ -170,7 +170,7 @@ void uart1_puts(UARTvar* s)
 	}
 }
 
-/*** Interrupts ***/
+/*** Interrupt ***/
 SIGNAL(USART1_RX_vect)
 {
 	unsigned char bit9;
@@ -191,7 +191,7 @@ SIGNAL(USART1_UDRE_vect)
 	usart1_reg()->ucsr1b->var &= ~(1 << UDRIE1);
 }
 
-/*** Complimentary functions ***/
+/*** Complimentary function ***/
 char* usart1_messageprint(USART1* uart, char* oneshot, char* msg, const char* endl)
 {
 	char* ptr;

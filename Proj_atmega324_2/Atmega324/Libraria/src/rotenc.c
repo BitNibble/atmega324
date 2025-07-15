@@ -5,7 +5,7 @@ License:  GNU General Public License
 Hardware: Rotary encoder Potentiometer
 Date:     25102020
 ************************************************************************/
-/*** File Library ***/
+/*** Library ***/
 #include "rotenc.h"
 
 /*** Procedure and Funtion declaration ***/

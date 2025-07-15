@@ -11,9 +11,8 @@
  */
 /***FCPU***/
 #define F_CPU 8000000UL
-/*
-** library
-*/
+
+/*** Library ***/
 #include <stdio.h>
 #include <stdlib.h>
 #include <avr/io.h>
@@ -27,7 +26,11 @@
 #include "clock.h"
 char* string;
 #define True 1
+
+/*** Procedure and Function declaration ***/
 void PORTINIT(void);
+
+/*** HANDLER ***/
 int main(void)
 {
 	PORTINIT();
@@ -290,14 +293,14 @@ int main(void)
 		PORTB=lfsm.getoutput(&lfsm);
 	}//End while
 }//End main
-/***Def***/
+
+/*** Procedure and Function definition ***/
 void PORTINIT(void){
 	DDRB=0XFF;
 	PORTB=0XFF;
 	DDRD=0X00;
 	PORTD=0XFF;
 }
-/***Int***/
-/******/
-/***EOF***/
+
+/*** EOF ***/
 

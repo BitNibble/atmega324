@@ -18,7 +18,7 @@ Date:     04/07/2025
 	#define F_CPU 16000000UL
 #endif
 
-/*** Global Library ***/
+/*** Library ***/
 #include <avr/io.h>
 #include <avr/boot.h>
 #include <avr/fuse.h>
@@ -29,7 +29,7 @@ Date:     04/07/2025
 
 #include "atmega324_registers.h"
 
-/*** Global Constant & Macro ***/
+/*** Constant & Macro ***/
 #define TWO 2
 #define NIBBLE_BITS 4
 #define BYTE_BITS 8
@@ -204,7 +204,7 @@ Atmega324SerialPeripherialInterface_TypeDef* spi_reg(void);
 
 // Timer/Counter, 16-bit (TC1)
 typedef volatile struct {
-	TIFR1_Typedef* tifr1; // 0x0036
+	TIFR1_TypeDef* tifr1; // 0x0036
 	TIMSK1_TypeDef* timsk1; // 0x006F
 	TCCR1A_TypeDef* tccr1a; // 0x0080
 	TCCR1B_TypeDef* tccr1b; // 0x0081
@@ -219,7 +219,7 @@ Atmega324TimerCounter1_TypeDef* tc1_reg(void);
 
 // Timer/Counter, 16-bit (TC3)
 typedef volatile struct {
-	TIFR3_Typedef* tifr3; // 0x0036
+	TIFR3_TypeDef* tifr3; // 0x0036
 	TIMSK3_TypeDef* timsk3; // 0x006F
 	TCCR3A_TypeDef* tccr3a; // 0x0080
 	TCCR3B_TypeDef* tccr3b; // 0x0081
@@ -234,7 +234,7 @@ Atmega324TimerCounter3_TypeDef* tc3_reg(void);
 
 // Timer/Counter, 8-bit (TC0)
 typedef volatile struct {
-	TIFR0_Typedef* tifr0; // 0x0035
+	TIFR0_TypeDef* tifr0; // 0x0035
 	TCCR0A_TypeDef* tccr0a; // 0x0044
 	TCCR0B_TypeDef* tccr0b; // 0x0045
 	U_byte* tcnt0; // 0x0046
@@ -247,7 +247,7 @@ Atmega324TimerCounter0_TypeDef* tc0_reg(void);
 
 // Timer/Counter, 8-bit Async (TC2)
 typedef volatile struct {
-	TIFR2_Typedef* tifr2; // 0x0037
+	TIFR2_TypeDef* tifr2; // 0x0037
 	GTCCR_TypeDef* gtccr; // 0x0043
 	TIMSK2_TypeDef* timsk2; // 0x0070
 	TCCR2A_TypeDef* tccr2a; // 0x00B0

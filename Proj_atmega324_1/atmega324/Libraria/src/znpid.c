@@ -5,14 +5,14 @@ License:  GNU General Public License
 Hardware: Atmega 128
 Date:     17022021_start
 ************************************************************************/
-/***File Library***/
+/*** Library ***/
 #include "znpid.h"
 
-/***File Constant & Macro***/
+/*** Constant & Macro ***/
 #define ZNPID_outMAX 1023
 #define ZNPID_outMIN -1023
 
-/***File Variable***/
+/*** Variable ***/
 double ZNPID_tmp;
 
 /*** Procedure & Function declaration ***/

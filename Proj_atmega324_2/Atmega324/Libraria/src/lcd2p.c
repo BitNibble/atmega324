@@ -5,17 +5,17 @@ License:  GNU General Public License
 Hardware: all
 Date:     12072025
 ************************************************************************/
-/*** File Library ***/
+/*** Library ***/
 #include "lcd2p.h"
 #include <util/delay.h>
 #include <stdio.h>
 
-/*** File Constant & Macro ***/
+/*** Constant & Macro ***/
 // CMD RS
 #define LCD02P_INST 0
 #define LCD02P_DATA 1
 
-/*** File Variable ***/
+/*** Variable ***/
 volatile uint8_t *lcd02pcmd_DDR;
 volatile uint8_t *lcd02pcmd_PIN;
 volatile uint8_t *lcd02pcmd_PORT;
@@ -52,6 +52,7 @@ static FILE lcd02p_stdout;
 
 static int lcd02p_putchar(char c, FILE *stream);
 
+/*** Internal State ***/
 static LCD02P setup_lcd02p = {
 	// V-table
 	.write = LCD02P_write,

@@ -8,7 +8,7 @@ Date:     31122023
 #ifndef _FUNCTION_H_
 	#define _FUNCTION_H_
 
-/*** Global Library ***/
+/*** Library ***/
 /*******pc use*******
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,7 +18,7 @@ Date:     31122023
 #include <stdint.h>
 #include <inttypes.h>
 
-/*** Global Constant & Macro ***/
+/*** Constant & Macro ***/
 #define FUNC_STR_SIZE 32
 
 /*** Handler ***/
@@ -71,5 +71,5 @@ void func_enable(void);
 FUNC* func(void);
 
 #endif
-/***EOF***/
+/*** EOF ***/
 

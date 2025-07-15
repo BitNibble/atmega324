@@ -8,10 +8,10 @@ Date:     25102020
 #ifndef _ROTENC_H_
 	#define _ROTENC_H_
 
-/*** Global Library ***/
+/*** Library ***/
 #include <inttypes.h>
 
-/*** Global Variable ***/
+/*** Parameter ***/
 typedef struct{
 	uint8_t PinChnA;
 	uint8_t PinChnB;
@@ -23,7 +23,7 @@ typedef struct{
 struct rotenc{
 	// VARIABLIES
 	rotaryencoderparameter par;
-	// PROTOTYPES VTABLE
+	// V-table
 	rotaryencoderparameter (*rte)(rotaryencoderparameter* par, uint8_t data);
 };
 typedef struct rotenc ROTENC;

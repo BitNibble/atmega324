@@ -9,7 +9,8 @@ Hardware: Atmega324A
  ***************************************************************************/
 //Good practice initialize
 #define F_CPU 16000000UL
-/******/
+
+/*** Library ***/
 #include <stdio.h>
 #include <string.h>
 #include "atmega324_analog.h"
@@ -23,12 +24,14 @@ Hardware: Atmega324A
 #include "watch.h"
 #include "clock.h"
 
+/*** Variable ***/
 volatile uint16_t counter = 0;
 char* uartreceive = NULL; // capture
 
-/*** Declaration ***/
+/*** Procedure and Function declaration ***/
 void PORTINIT(void);
-/*** Program Cycle ***/
+
+/*** HANDLER ***/
 int main(void)
 {
 /*** Inic ***/
@@ -64,12 +67,13 @@ while (1)
 	lcd0()->gotoxy(3,12);
 	lcd0()->string_size( watch()->show(), 8 );
 }}
-/***Prototypes***/
+
+/*** Procedure and Function definition ***/
 void PORTINIT(void){
 	gpiob_reg()->ddr->var = 1;
 	gpiob_reg()->port->var = 1;
 };
-/***Interrupts***/
+/*** Interrupt ***/
 ISR(TIMER1_COMPA_vect)
 {
 	gpiob_reg()->port->par.bit0 ^= 1;

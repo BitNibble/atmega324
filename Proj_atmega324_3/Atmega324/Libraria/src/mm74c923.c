@@ -5,15 +5,15 @@ License:  GNU General Public License
 Hardware: 74C923
 Date:
 *************************************************************************/
-/*** File Library ***/
+/*** Library ***/
 #include "mm74c923.h"
 #include "explode.h"
 #include "function.h"
 
-/*** File Constant & Macro ***/
+/*** Constant & Macro ***/
 #define MM74C923_KEY_BUFFER_SIZE 16
 
-/*** File Variable ***/
+/*** Variable ***/
 static EXPLODE vari;
 
 volatile uint8_t *mm74c923_DDR;

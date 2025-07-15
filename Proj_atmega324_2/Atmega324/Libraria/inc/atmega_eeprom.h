@@ -8,6 +8,7 @@ Date:     04072025
 #ifndef _ATMEGA_EEPROM_H_
 	#define _ATMEGA_EEPROM_H_
 
+/*** Library ***/
 #include <avr/eeprom.h>
 #include "atmega324.h"
 
@@ -36,5 +37,5 @@ void eeprom_enable(void);
 EEPROM* eeprom(void);
 
 #endif
-/***EOF***/
+/*** EOF ***/
 

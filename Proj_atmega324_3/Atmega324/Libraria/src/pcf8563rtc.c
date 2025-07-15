@@ -5,7 +5,7 @@ License:  GNU General Public License
 Hardware: PCF8563
 Date:     29112022
  **************************************************************************************************/
-/*** File Library ***/
+/*** Library ***/
 #include "pcf8563rtc.h"
 #if defined(__AVR_ATmega64__) || defined(__AVR_ATmega128__)
 	#include "atmega128mapping.h"

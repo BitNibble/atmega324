@@ -5,11 +5,11 @@ License:  GNU General Public License
 Hardware: Atmega 128
 Date:     08032021_start
 ************************************************************************/
-/*** File Library ***/
+/*** Library ***/
 #include "hx711.h"
 #include <avr/io.h>
 
-/*** File Constant & Macro ***/
+/*** Constant & Macro ***/
 #define ZERO 0
 #define OFF 0
 #define ONE 1
@@ -18,7 +18,7 @@ Date:     08032021_start
 #define HX711_ADC_bits 24
 #define HX711_VECT_SIZE 4
 
-/*** File Variable ***/
+/*** Variable ***/
 HX711_calibration HX711_Default_50Kg = {
 	.offset_32 = 35800,
 	.offset_64 = 71600,

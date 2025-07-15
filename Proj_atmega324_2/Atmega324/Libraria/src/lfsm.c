@@ -8,15 +8,15 @@ Comment:
 	page=1 is dedicated for global logic, if page>1 is for local logic.
 	purpose is for machine programming, and encoders. General purpose algorithm.
 *************************************************************************/
-/*** File library ***/
+/*** Library ***/
 #include "lfsm.h"
 
-/*** File Constant & Macro ***/
+/*** Constant & Macro ***/
 #define NPAGES 255 // 1 to 254 possible pages
 #define BYTEL 0
 #define BYTEH 65535
 
-/*** File Variable ***/
+/*** Variable ***/
 struct lfsmdata data, tmp1, tmp2;
 const uint16_t tmask = 0xFFFF;
 

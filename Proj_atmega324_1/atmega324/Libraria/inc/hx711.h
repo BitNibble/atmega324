@@ -8,10 +8,10 @@ Date:     08032021_start
 #ifndef _HX711_H_
 	#define _HX711_H_
 
-/*** Global Library ***/
+/*** Library ***/
 #include <inttypes.h>
 
-/*** Global Constant & Macro ***/
+/*** Constant & Macro ***/
 #ifndef STATUS_REGISTER
 	#define STATUS_REGISTER SREG
 #endif
@@ -19,7 +19,7 @@ Date:     08032021_start
 	#define GLOBAL_INTERRUPT_ENABLE 7
 #endif
 
-/*** Typedef ***/
+/*** Parameter ***/
 // calibration
 typedef struct{
 	int32_t offset_32; // ZERO set point A
@@ -47,6 +47,7 @@ struct hx711{
 	float raw_mean;
 	HX711_calibration cal_data;
 	
+	// V-table
 	uint8_t (*get_amplify)(struct hx711* self);
 	uint8_t (*read_bit)(void);
 	void (*set_amplify)(struct hx711* self, uint8_t amplify);
@@ -61,5 +62,5 @@ typedef struct hx711 HX711;
 HX711 hx711_enable(volatile uint8_t *ddr, volatile uint8_t *pin, volatile uint8_t *port, uint8_t datapin, uint8_t clkpin);
 
 #endif
-/***EOF***/
+/*** EOF ***/
 

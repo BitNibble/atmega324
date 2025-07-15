@@ -122,7 +122,7 @@ Atmega324SerialPeripherialInterface_TypeDef* spi_reg(void) {
 }
 // Static instance
 static const Atmega324TimerCounter1_TypeDef tc1 = {
-	.tifr1   = (TIFR1_Typedef*)  0x0036,
+	.tifr1   = (TIFR1_TypeDef*)  0x0036,
 	.timsk1  = (TIMSK1_TypeDef*) 0x006F,
 	.tccr1a  = (TCCR1A_TypeDef*) 0x0080,
 	.tccr1b  = (TCCR1B_TypeDef*) 0x0081,
@@ -138,7 +138,7 @@ Atmega324TimerCounter1_TypeDef* tc1_reg(void) {
 }
 // Static instance
 static const Atmega324TimerCounter3_TypeDef tc3 = {
-	.tifr3   = (TIFR3_Typedef*)  0x0038,
+	.tifr3   = (TIFR3_TypeDef*)  0x0038,
 	.timsk3  = (TIMSK3_TypeDef*) 0x0071,
 	.tccr3a  = (TCCR3A_TypeDef*) 0x0090,
 	.tccr3b  = (TCCR3B_TypeDef*) 0x0091,
@@ -154,7 +154,7 @@ Atmega324TimerCounter3_TypeDef* tc3_reg(void) {
 }
 // Static instance
 static const Atmega324TimerCounter0_TypeDef tc0 = {
-	.tifr0  = (TIFR0_Typedef*)  0x0035,
+	.tifr0  = (TIFR0_TypeDef*)  0x0035,
 	.tccr0a = (TCCR0A_TypeDef*) 0x0044,
 	.tccr0b = (TCCR0B_TypeDef*) 0x0045,
 	.tcnt0  = (U_byte*)        0x0046,
@@ -168,7 +168,7 @@ Atmega324TimerCounter0_TypeDef* tc0_reg(void) {
 }
 // Static instance
 static const Atmega324TimerCounter2_TypeDef tc2 = {
-	.tifr2  = (TIFR2_Typedef*)  0x0037,
+	.tifr2  = (TIFR2_TypeDef*)  0x0037,
 	.gtccr  = (GTCCR_TypeDef*)  0x0043,
 	.timsk2 = (TIMSK2_TypeDef*) 0x0070,
 	.tccr2a = (TCCR2A_TypeDef*) 0x00B0,

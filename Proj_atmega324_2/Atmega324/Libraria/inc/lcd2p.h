@@ -13,11 +13,11 @@ Date:     12072025
 	#define F_CPU 16000000UL
 #endif
 
-/*** Global Library ***/
+/*** Library ***/
 #include <stdint.h>
 #include <inttypes.h>
 
-/*** Global Constant & Macro ***/
+/*** Constant & Macro ***/
 #define LCD_WIRING_3
 #if defined(LCD_WIRING_1)
 	#define LCD02P_RS 0
@@ -50,6 +50,7 @@ Date:     12072025
 
 /*** Handler ***/
 typedef struct{
+	// V-table
 	void (*write)(char c, unsigned short D_I);
 	char (*read)(unsigned short D_I);
 	uint8_t (*BF)(void);

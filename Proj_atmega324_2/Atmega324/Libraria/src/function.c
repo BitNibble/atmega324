@@ -5,7 +5,7 @@ License:  GNU General Public License
 Hardware: all
 Date:     31122023
 *************************************************************************/
-/*** File Library ***/
+/*** Library ***/
 #include "function.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,7 +13,7 @@ Date:     31122023
 #include <stdarg.h>
 #include <math.h>
 
-/*** File Variable ***/
+/*** Variable ***/
 static FUNC func_setup;
 static char FUNC_str[FUNC_STR_SIZE] = {0};
 static const uint16_t func_str_size = (FUNC_STR_SIZE - 1);

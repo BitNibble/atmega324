@@ -11,7 +11,8 @@ Hardware: Atmega324A
  ***************************************************************************/
 //Good practice initialize
 #define F_CPU 16000000UL
-/******/
+
+/*** Library ***/
 #include <stdio.h>
 #include "atmega324_analog.h"
 #include "atmega_eeprom.h"
@@ -23,7 +24,8 @@ Hardware: Atmega324A
 #include "function.h"
 #include "watch.h"
 #include "clock.h"
-//Constant & macros
+
+/*** Constant & Macro ***/
 #define True 1
 #define False 0
 //Global var
@@ -32,10 +34,11 @@ uint16_t N_on=8000;
 volatile uint16_t counter=0;
 char* uartreceive = NULL; // capture
 uint8_t increment = 0;
-//Prototype header
+
+/*** Procedure and Function declaration ***/
 void PORTINIT(void);
-/******/
-/******/
+
+/*** HANDLER ***/
 int main(void)
 {
 PORTINIT();
@@ -304,13 +307,15 @@ while (True)
 	//Default
 		
 }}
-/***Prototypes***/
+
+/*** Procedure and Function definition ***/
 void PORTINIT(void){
 	gpiod_reg()->ddr->par.bit2 = 1;
 	gpiod_reg()->ddr->var |= (1<<4) | (1<<5);
 	gpiod_reg()->port->var = (1<<4) | (1<<5);
 };
-/***Interrupts***/
+
+/***Interrupt***/
 ISR(TIMER1_COMPA_vect)
 {
 	counter++;
@@ -325,5 +330,5 @@ ISR(TIMER1_COMPA_vect)
 	increment = 1;
 }
 
-/***EOF***/
+/*** EOF ***/
 

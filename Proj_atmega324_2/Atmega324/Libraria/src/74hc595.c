@@ -5,17 +5,17 @@ License:  GNU General Public License
 Hardware: 74HC595
 Date:     25/10/2020
 ************************************************************************/
-/*** File Library ***/
+/*** Library ***/
 #include "74hc595.h"
 
-/*** File Header ***/
+/*** Procedure and Function declaration ***/
 void HC595_shift_bit(hc595_parameter* par, uint8_t state);
 void HC595_shift_ibyte(hc595_parameter* par, uint8_t byte);
 void HC595_shift_byte(hc595_parameter* par, uint8_t byte);
 void HC595_shift_out(hc595_parameter* par);
 hc595_parameter hc595_par_inic(volatile IO_var *ddr, volatile IO_var *port, uint8_t datapin, uint8_t clkpin, uint8_t outpin);
 
-/*** 74HC595 Procedure & Function Definition ***/
+/*** Handler ***/
 HC595 hc595_enable(volatile IO_var *ddr, volatile IO_var *port, uint8_t datapin, uint8_t clkpin, uint8_t outpin)
 {
 	HC595 setup_hc595 = {
@@ -43,6 +43,7 @@ HC595 hc595_enable(volatile IO_var *ddr, volatile IO_var *port, uint8_t datapin,
 	return setup_hc595;
 }
 
+/*** Procedure and Function definition ***/
 void HC595_shift_bit(hc595_parameter* par, uint8_t state)
 {
 	if (state)

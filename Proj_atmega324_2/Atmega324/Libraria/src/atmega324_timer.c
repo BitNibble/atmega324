@@ -39,6 +39,7 @@ void TIMER_COUNTER3_compareB(uint16_t compare);
 void TIMER_COUNTER3_start(uint16_t prescaler);
 void TIMER_COUNTER3_stop(void);
 
+/*** Internal State ***/
 static TIMER_COUNTER0 timer0_setup = {
 	.compoutmodeA=TIMER_COUNTER0_compoutmodeA,
 	.compoutmodeB=TIMER_COUNTER0_compoutmodeB,
@@ -48,6 +49,8 @@ static TIMER_COUNTER0 timer0_setup = {
 	.stop=TIMER_COUNTER0_stop
 };
 static uint8_t timer0_state;
+
+/*** Internal State ***/
 static TIMER_COUNTER1 timer1_setup = {
 	.compoutmodeA=TIMER_COUNTER1_compoutmodeA,
 	.compoutmodeB=TIMER_COUNTER1_compoutmodeB,
@@ -57,6 +60,8 @@ static TIMER_COUNTER1 timer1_setup = {
 	.stop=TIMER_COUNTER1_stop
 };
 static uint8_t timer1_state;
+
+/*** Internal State ***/
 static TIMER_COUNTER2 timer2_setup = {
 	.compoutmodeA=TIMER_COUNTER2_compoutmodeA,
 	.compoutmodeB=TIMER_COUNTER2_compoutmodeB,
@@ -66,6 +71,8 @@ static TIMER_COUNTER2 timer2_setup = {
 	.stop=TIMER_COUNTER2_stop
 };
 static uint8_t timer2_state;
+
+/*** Internal State ***/
 static TIMER_COUNTER3 timer3_setup = {
 	.compoutmodeA=TIMER_COUNTER3_compoutmodeA,
 	.compoutmodeB=TIMER_COUNTER3_compoutmodeB,

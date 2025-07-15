@@ -7,8 +7,11 @@ Date:     25/10/2020
 ************************************************************************/
 #ifndef _74HC595_H_
 	#define _74HC595_H_
+
+/*** Library ***/
+#include <inttypes.h>
 	
-/*** Global Constant & Macro ***/
+/*** Constant & Macro ***/
 //#define STM32F4
 #if defined (STM32F4)
 	#ifndef IO_var
@@ -20,10 +23,7 @@ Date:     25/10/2020
 	#endif
 #endif
 
-/*** File Library ***/
-#include <inttypes.h>
-
-/*** File TypeDef ***/
+/*** Parameter ***/
 typedef struct{
 	uint8_t HC595_datapin;
 	uint8_t HC595_clkpin;
@@ -32,11 +32,12 @@ typedef struct{
 	volatile IO_var *hc595_PORT;
 }hc595_parameter;
 
-/*** 74HC595 TypeDef ***/
+/*** Handler ***/
 typedef struct
 {
 	hc595_parameter par;
-	/******/
+	
+	// V-table
 	void (*bit)(hc595_parameter* par, uint8_t state);
 	void (*ibyte)(hc595_parameter* par, uint8_t byte);
 	void (*byte)(hc595_parameter* par, uint8_t byte);
@@ -47,7 +48,7 @@ HC595 hc595_enable(volatile IO_var *ddr, volatile IO_var *port, uint8_t datapin,
 
 #endif
 
-/***EOF***/
+/*** EOF ***/
 
 /******
 1º Sequence

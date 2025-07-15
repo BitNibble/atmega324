@@ -11,10 +11,10 @@ COMMENT:
 #ifndef _MM74C923_H_
 	#define _MM74C9232_H_
 
-/*** Global Library ***/
+/*** Library ***/
 #include <inttypes.h>
 
-/*** Global Constant & Macro ***/
+/*** Constant & Macro ***/
 #define MM74C923_DATA_OUT_A 7 //ic pin 19 LSB
 #define MM74C923_DATA_OUT_B 6 //ic pin 18
 #define MM74C923_DATA_OUT_C 5 //ic pin 17
@@ -24,7 +24,7 @@ COMMENT:
 #define MM74C923_OUTPUT_ENABLE 1 //ic pin 14
 #define MM74C923_DATA_AVAILABLE 0 //ic pin 13
 
-/*** Global Variable ***/
+/*** Handler ***/
 struct mm74c923{
 	void (*activate)(void);
 	char (*getch)(void);

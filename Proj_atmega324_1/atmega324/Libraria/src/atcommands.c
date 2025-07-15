@@ -5,11 +5,11 @@ License:  GNU General Public License
 Hardware: ALL
 Date: 24042023
 *************************************************************************/
-/*** File Library ***/
+/*** Library ***/
 #include "atcommands.h"
 #include <string.h>
 
-/*** File Variable ***/
+/*** Variable ***/
 char ATstr[72];
 
 /*** Procedure & Function definition ***/

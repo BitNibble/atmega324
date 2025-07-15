@@ -5,7 +5,7 @@ License:  GNU General Public License
 Hardware: all
 Date:     26062025
 ******************************************************************************/
-/*** File Library ***/
+/*** Library ***/
 #include "buffer.h"
 #include <stdio.h>
 #include <string.h>

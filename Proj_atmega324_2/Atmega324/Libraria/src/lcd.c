@@ -5,17 +5,17 @@ License:  GNU General Public License
 Hardware: all
 Date:     04072025              
 ************************************************************************/
-/*** File Library ***/
+/*** Library ***/
 #include "lcd.h"
 #include <util/delay.h>
 #include <stdio.h>
 
-/*** File Constant & Macro ***/
+/*** Constant & Macro ***/
 // CMD RS
 #define INST 0
 #define DATA 1
 
-/*** File Variable ***/
+/*** Variable ***/
 volatile uint8_t *lcd0_DDR;
 volatile uint8_t *lcd0_PIN;
 volatile uint8_t *lcd0_PORT;
@@ -66,6 +66,7 @@ static FILE lcd1_stdout;
 static int lcd0_putchar(char c, FILE *stream);
 static int lcd1_putchar(char c, FILE *stream);
 
+/*** Internal State ***/
 static LCD0 lcd0_setup = {
 	// V-table
 	.write = LCD0_write,
@@ -81,6 +82,7 @@ static LCD0 lcd0_setup = {
 	.reboot = LCD0_reboot,
 	.printf = printf
 };
+/*** Internal State ***/
 static LCD1 lcd1_setup = {
 	// V-table
 	.write = LCD1_write,

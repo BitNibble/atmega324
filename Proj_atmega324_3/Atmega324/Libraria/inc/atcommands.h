@@ -8,15 +8,15 @@ Date:     24042023
 #ifndef _ATCOMMANDS_H_
 	#define _ATCOMMANDS_H_
 
-/*** Global Library ***/
+/*** Library ***/
 #include <inttypes.h>
 
-/*** Global Procedure and Function declaration ***/
+/*** Procedure and Function declaration ***/
 char* BT05ATcmd(uint16_t num);
 char* HC42ATcmd(uint16_t num);
 char* HC05ATcmd(uint16_t num);
 char* ESP8266cmd(uint16_t num);
 
 #endif
-/***EOF***/
+/*** EOF ***/
 

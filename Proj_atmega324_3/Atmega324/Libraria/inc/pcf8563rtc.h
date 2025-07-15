@@ -8,10 +8,10 @@ Date:     29112022
 #ifndef _PCF8563RTC_H_
 	#define _PCF8563RTC_H_
 
-/*** Global Library ***/
+/*** Library ***/
 #include <inttypes.h>
 
-/*** Global Constant & Macro ***/
+/*** Constant & Macro ***/
 #define PCF8563   0x51  // PCF8563 ID
 #define PCF8563ReadMode_U8   0xA3  // PCF8563 ID
 #define PCF8563WriteMode_U8  0xA2  // PCF8563 ID
@@ -25,7 +25,7 @@ Date:     29112022
 #define PCF8563ControlRegAddress_U8  0x00    // Address to access PC8563 CONTROL register
 #define PCF8563CLKOUT_control_U8     0x0D	 // External oscillating pin
 
-/*** Global Variable ***/
+/*** Variable ***/
 struct date{
 	uint8_t years;
 	uint8_t century_months;
@@ -43,6 +43,8 @@ struct alarm{
 	uint8_t day_alarm;
 	uint8_t weekday_alarm;
 };
+
+/*** Handler ***/
 struct pcfrtc{
 	void (*SetTime)(uint8_t var_hour_u8, uint8_t var_min_u8, uint8_t var_sec_u8);
 	void (*SetHour)(uint8_t var_hour_u8);
@@ -64,5 +66,5 @@ typedef struct pcfrtc PCF8563RTC;
 PCF8563RTC pcf8563rtc_enable(uint8_t prescaler);
 
 #endif
-/***EOF***/
+/*** EOF ***/
 

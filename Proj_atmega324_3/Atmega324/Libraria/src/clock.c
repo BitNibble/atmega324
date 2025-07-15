@@ -5,12 +5,12 @@ License:  GNU General Public License
 Hardware: all
 Date:     31062025
 *************************************************************************/
-/*** File Library ***/
+/*** Library ***/
 #include "clock.h"
 
-/*** File Constant & Macro ***/
+/*** Constant & Macro ***/
 
-/*** File Variable ***/
+/*** Variable ***/
 static CLOCK clock_setup;
 static RELOGIO_TIME ctime = {0};
 static char CLOCK_tmp[9] = {0};

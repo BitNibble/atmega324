@@ -8,10 +8,10 @@ Update:   26/06/2025
 #ifndef _ATMEGA324_USART1_H_
 	#define _ATMEGA324_USART1_H_
 
-/*** Global Library ***/
+/*** Library ***/
 #include "atmega324.h"
 
-/*** Global Constant & Macro ***/
+/*** Constant & Macro ***/
 #ifndef UART1_RX_BUFFER_SIZE
 	#define UART1_RX_BUFFER_SIZE 32
 #endif
@@ -35,7 +35,7 @@ Update:   26/06/2025
 
 /*** Handler ***/
 typedef struct {
-	// prototype pointers
+	// V-table
 	UARTvar (*read)(void);
 	UARTvar (*getch)(void);
 	UARTvar* (*gets)(void);
@@ -48,9 +48,9 @@ typedef struct {
 void usart1_enable( uint32_t baud, unsigned int FDbits, unsigned int Stopbits, unsigned int Parity );
 USART1* usart1(void);
 
-/*** Global Header ***/
+/*** Procedure and Function declaration ***/
 char* usart1_messageprint(USART1* uart, char* oneshot, char* msg, const char* endl);
 
 #endif
-/***EOF***/
+/*** EOF ***/
 
