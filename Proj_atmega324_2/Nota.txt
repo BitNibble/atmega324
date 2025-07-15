@@ -1,0 +1,9 @@
+Ficha na Placa não é ISP, tem que ter placa conversora, ou cabo com
+ligações trocadas.
+
+29062025:
+Program Memory Usage 	:	16456 bytes   50,2 % Full
+Data Memory Usage 		:	397 bytes   19,4 % Full
+
+Program Memory Usage 	:	16700 bytes   51,0 % Full
+Data Memory Usage 		:	509 bytes   24,9 % Full

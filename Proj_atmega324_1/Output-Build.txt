@@ -1,0 +1,16 @@
+﻿------ Clean started: Project: atmega324, Configuration: Debug AVR ------
+Build started.
+Project "atmega324.cproj" (Clean target(s)):
+Target "Clean" in file "C:\Program Files (x86)\Atmel\Studio\7.0\Vs\Compiler.targets" from project "D:\Embedded\Atmega_324\Proj_atmega324_1\atmega324\atmega324.cproj" (entry point):
+	Task "RunCompilerTask"
+		Shell Utils Path C:\Program Files (x86)\Atmel\Studio\7.0\shellUtils
+		C:\Program Files (x86)\Atmel\Studio\7.0\shellUtils\make.exe clean 
+		rm -rf  Libraria/src/74hc595.o Libraria/src/atcommands.o Libraria/src/atmega324.o Libraria/src/atmega324_analog.o Libraria/src/atmega324_timer.o Libraria/src/atmega324_twi.o Libraria/src/atmega324_usart0.o Libraria/src/atmega324_usart1.o Libraria/src/atmega_eeprom.o Libraria/src/buffer.o Libraria/src/clock.o Libraria/src/explode.o Libraria/src/function.o Libraria/src/hx711.o Libraria/src/keypad.o Libraria/src/lcd.o Libraria/src/lcd2p.o Libraria/src/lfsm.o Libraria/src/mm74c923.o Libraria/src/pcf8563rtc.o Libraria/src/rotenc.o Libraria/src/watch.o Libraria/src/znpid.o main.o   
+		rm -rf  Libraria/src/74hc595.d Libraria/src/atcommands.d Libraria/src/atmega324.d Libraria/src/atmega324_analog.d Libraria/src/atmega324_timer.d Libraria/src/atmega324_twi.d Libraria/src/atmega324_usart0.d Libraria/src/atmega324_usart1.d Libraria/src/atmega_eeprom.d Libraria/src/buffer.d Libraria/src/clock.d Libraria/src/explode.d Libraria/src/function.d Libraria/src/hx711.d Libraria/src/keypad.d Libraria/src/lcd.d Libraria/src/lcd2p.d Libraria/src/lfsm.d Libraria/src/mm74c923.d Libraria/src/pcf8563rtc.d Libraria/src/rotenc.d Libraria/src/watch.d Libraria/src/znpid.d main.d   
+		rm -rf "atmega324.elf" "atmega324.a" "atmega324.hex" "atmega324.lss" "atmega324.eep" "atmega324.map" "atmega324.srec" "atmega324.usersignatures"
+	Done executing task "RunCompilerTask".
+Done building target "Clean" in project "atmega324.cproj".
+Done building project "atmega324.cproj".
+
+Build succeeded.
+========== Clean: 1 succeeded, 0 failed, 0 skipped ==========
